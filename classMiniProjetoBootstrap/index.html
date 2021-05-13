@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Tutorial Bootstrap</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid-md">
+        <header class="card-head">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #6f42c1;">
+                <!-- navbar-brand: campo especial para colocar imagem e logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="https://getbootstrap.com.br/docs/4.1/assets/brand/bootstrap-solid.svg" width="30"
+                        height="30" class="d-inline-block align-top" alt="">
+                    Tutorial Bootstrap
+                </a>
+                <!-- navbar-toggler: opçao de navegação -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+                    aria-label="Alterna navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                    <!-- navbar-nav: itens de navegação que suportam itens de menu -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- nav-item active -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Início<span class="sr-only">(página atual)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://getbootstrap.com/">Bootstrap Oficial</a>
+                        </li>
+                        <!-- nav-item dropdown  -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-uppercase" href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                conteúdo
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#btstGrid">Bootstrap Grid</a>
+                                <a class="dropdown-item" href="#btstTxt">Classes de Texto Espaçamento, Margem e Alinhamento</a>
+                                <a class="dropdown-item" href="#btstColor">Classes de Cores e Bordas</a>
+                                <a class="dropdown-item" href="#btstButton">Componentes Botões e Dropdown</a>
+                                <a class="dropdown-item" href="#btstInput">Campos de Texto Input</a>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                    <form class="form-inline bg-transparent my-2 my-lg-0">
+                        <a href="https://getbootstrap.com/docs/4.1/getting-started/download/"
+                            class="btn btn-light btn-md rounded-pill" target="_blank" role="button">Faça o Download do Bootstrap aqui</a>
+                    </form>
+                </div>
+        </header>
+        <main class="card-body bg-light mt-5">
+            <div class="text-center">
+                <img src="https://getbootstrap.com.br/docs/4.1/assets/brand/bootstrap-solid.svg" width="60" height="60"
+                class="rounded-circle" alt="">
+            <h1 class="display-2">Tutorial Básico de Bootstrap</h1>
+            </div>
+            <div style="width: 100%;height: 25px;"></div>
+            <p class="h5 text-md-center col-10 mx-auto">
+                Bootstrap 4 é a versão mais recente do Bootstrap , que é a estrutura HTML, CSS
+                e JavaScript mais popular para o desenvolvimento de sites móveis responsivos.
+            </p>
+            <p class="h5 text-md-center col-10 mx-auto">
+                Este tutorial do Bootstrap 4 contém algumas das suas funcionalidades mais básicas.
+            </p>
+
+            <div style="width: 100%;height: 50px;"></div>
+            <h2 class="display-4" id="btstGrid">1 - Bootstrap Grid</h2>
+            <p>
+                O sistema de grade do Bootstrap é construído com flexbox e permite até 12 colunas na página.
+                Se não quiser usar todas as 12 colunas individualmente, você pode agrupar as colunas para criar colunas
+                mais largas: <strong>Certifique-se de que a soma some 12 ou menos (não é necessário que você use todas
+                    as 12 colunas disponíveis). </strong>
+            </p>
+
+            <p class="h4">
+                1.1 - Classes de grid:
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-secondary active font-weight-bold"> O
+                    sistema de grade Bootstrap 4 tem cinco classes de grid:</li>
+                <li class="list-group-item"><span class="font-weight-bold">.col- :</span>dispositivos extra pequenos -
+                    largura da tela menor que 576 px</li>
+                <li class="list-group-item"><span class="font-weight-bold">.col-sm- :</span>dispositivos pequenos -
+                    largura da tela igual ou superior a 576 px</li>
+                <li class="list-group-item"><span class="font-weight-bold">.col-md- :</span>dispositivos médios -
+                    largura da tela igual ou superior a 768 px</li>
+                <li class="list-group-item"><span class="font-weight-bold">.col-lg- :</span>dispositivos grandes -
+                    largura da tela igual ou superior a 992 px</li>
+                <li class="list-group-item"><span class="font-weight-bold">.col-xl- :</span>dispositivos xlarge -
+                    largura da tela igual ou superior a 1200 px</li>
+            </ul>
+            <div style="width: 100%;height: 25px;"></div>
+
+            <p class="h4">
+                1.2 - Estrutura Básica de um Grid Bootstrap 4:
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+
+            <dl class="row">
+                <dt class="col-sm-1"> <span class="font-weight-bold">1.2.1: </span></dt>
+                <dd class="col-sm-11">
+                    <p>
+                        Crie uma linha 'div class="row"'. Em seguida,
+                        adicione o número desejado de colunas (tags com .col-*-*classes apropriadas ). A primeira
+                        estrela (*)
+                        representa a responsividade: sm, md, lg ou xl, enquanto a segunda estrela representa um número,
+                        que deve
+                        somar 12 para cada linha.
+                    </p>
+                </dd>
+
+                <dt class="col-sm-1"><span class="font-weight-bold">1.2.2 </span></dt>
+                <dd class="col-sm-11">
+                    <p>
+                        Em vez de adicionar um número a cada col, deixe o
+                        bootstrap lidar com o layout, para criar colunas de largura igual: dois "col"elementos = 50% de
+                        largura
+                        para cada coluna. três colunas = 33,33% de largura para cada coluna. quatro
+                        .col-sm|md|lg|xlcolunas =
+                        largura de 25%, etc. Você também pode usar para tornar as colunas responsivas.
+                    </p>
+
+                </dd>
+            </dl>
+
+            <h2 class="display-4 text-capitalize" id="btstTxt">2 - Classes de texto, Espaçamento, Margem e Alinhamento
+            </h2>
+            <div style="width: 100%;height: 25px;"></div>
+            <p class="h4">
+                2.1 - Tipografia, Classes de Texto, Alinhamento:
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+            <p>
+                O Bootstrap 4 usa um padrão font-sizede 16 pixels e line-height1,5.
+            </p>
+            <p>
+                O padrão font-familyé "Helvetica Neue", Helvetica, Arial, sans-serif.
+            </p>
+
+            <p>
+                Além disso, todos os 'p' elementos têm margin-top: 0e margin-bottom: 1rem(16px por padrão).
+            </p>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-secondary">
+                        <thead>
+                            <tr>
+                                <th>Classe</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>.font-weight-bold</td>
+                                <td><span class="font-weight-bold"> Texto em negrito</span></td>
+                            </tr>
+                            <tr>
+                                <td>.font-weight-bolder</td>
+                                <td><span class=".font-weight-bolder">Mais negrito que o elemento pai</span></td>
+                            </tr>
+                            <tr>
+                                <td>.font-italic</td>
+                                <td class="font-italic">Texto itálico.</td>
+                            </tr>
+                            <tr>
+                                <td>.font-weight-light</td>
+                                <td><span class="font-weight-light">Texto Leve</span></td>
+                            </tr>
+                            <tr>
+                                <td>.font-weight-lighter</td>
+                                <td class="font-weight-lighter">Texto mais leve que o elemento pai</td>
+                            </tr>
+                            <tr>
+                                <td>.lead</td>
+                                <td class="lead">Faz um parágrafo se destacar</td>
+                            </tr>
+                            <tr>
+                                <td>.font-weight-normal</td>
+                                <td class="font-weight-normal">Texto Normal</td>
+                            </tr>
+                            <tr>
+                                <td>.small</td>
+                                <td class="small">Indica um texto menor (definido para 80% do tamanho do pai)</td>
+                            </tr>
+                            <tr>
+                                <td>.text-left</td>
+                                <td class="text-left">Indica texto alinhado à esquerda</td>
+                            </tr>
+                            <tr>
+                                <td>.text-*-left</td>
+                                <td class=".text-md-left">Indica texto alinhado à esquerda em telas pequenas, médias, grandes ou muito grandes</td>
+                            </tr>
+                            <tr>
+                                <td>.text-break</td>
+                                <td>Evita que textos longos quebrem o layout</td>
+                            </tr>
+                            <tr>
+                                <td>.text-center</td>
+                                <td class="text-center">Indica texto alinhado ao centro</td>
+                            </tr>
+                            <tr>
+                                <td>.text-*-center</td>
+                                <td class="text-center">Indica texto alinhado ao centro em telas pequenas, médias, grandes ou muito grandes</td>
+                            </tr>
+                            <tr>
+                                <td>.text-decoration-none</td>
+                                <td>Remove o sublinhado de um link</td>
+                            </tr>
+                            <tr>
+                                <td>.text-right</td>
+                                <td class="text-right">Indica texto alinhado à direita</td>
+                            </tr>
+                            <tr>
+                                <td>.text-*-right</td>
+                                <td class="text-right">Indica texto alinhado à direita em telas pequenas, médias, grandes ou muito grandes</td>
+                            </tr>
+                            <tr>
+                                <td>.text-justify</td>
+                                <td>Indica texto justificado</td>
+                            </tr>
+                            <tr>
+                                <td>.text-monospace</td>
+                                <td class="text-monospace">Texto monoespaçado</td>
+                            </tr>
+                            <tr>
+                                <td>.text-nowrap</td>
+                                <td>Indica que não há quebra de texto</td>
+                            </tr>
+                            <tr>
+                                <td>.text-lowercase</td>
+                                <td class="text-lowercase">INDICA TEXTO EM MINUSCULAS</td>
+                            </tr>
+                            <tr>
+                                <td>Indicates lowercased text</td>
+                                <td>Redefine a cor de um texto ou link (herda a cor de seu pai)</td>
+                            </tr>
+                            <tr>
+                                <td>.text-uppercase</td>
+                                <td class="text-uppercase">Indica texto em maiúsculas</td>
+                            </tr>
+                            <tr>
+                                <td>.text-capitalize</td>
+                                <td>Indica o inicio de cada palavra do texto com letra maiúscula</td>
+                            </tr>
+                            <tr>
+                                <td>.initialism</td>
+                                <td>Exibe o texto dentro de um elemento 'abbr'(para abreviações e acrônimos), em um tamanho de fonte ligeiramente menor</td>
+                            </tr>
+                            <tr>
+                                <td>.list-unstyled</td>
+                                <td class="text-justify">Remove o estilo de lista padrão e a margem esquerda dos itens da lista (funciona em 'ul' e  'ol'). Esta classe se aplica apenas a itens de lista filha imediata (para remover o estilo de lista padrão de qualquer lista aninhada, aplique esta classe a qualquer lista aninhada também)</td>
+                            </tr>
+                            <tr>
+                                <td>.list-inline</td>
+                                <td>Coloca todos os itens da lista em uma única linha (usado junto com .list-inline-item em cada 'li' elementos)</td>
+                            </tr>
+                            <tr>
+                                <td>.pre-scrollable</td>
+                                <td>Torna um elemento 'pre' rolável</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="width: 100%;height: 25px;"></div>
+            <p class="h4">
+                2.2 - Espaçamento, Margem, Padding:
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+            <p>
+                As classes são definidas usando o formato {propriedade}{lados}-{tamanho} para o breakpoint xs e {proprieade}{lados}-{breakpoint}-{tamanho} para sm, md, lg e xl.
+            </p>
+           
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-secondary active font-weight-bold">Bootstrap tem um grande leque de atalhos responsivos de margem e padding para modificar a aparência de um elemento(Deixe o campo em branco, para usar margin ou padding em todos os quatro lados do elemento:</li>
+                <li class="list-group-item"><span class="font-weight-bold">.m-  : </span>      para usar margin;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.p- : </span>para usar padding; </li>
+                <li class="list-group-item"><span class="font-weight-bold">.mt/.pt- : </span>para usar margin-top ou padding-top;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.mb/pb- : </span>para usar margin-bottom ou padding-bottom;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.ml/pl- : </span>para usar margin-left ou padding-left;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.mr/pr- : </span> para usar margin-right ou padding-right;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.mx/px- : </span>para usar margem ou padding, tanto na esquerda quanto direita;
+                </li>
+                <li class="list-group-item"><span class="font-weight-bold">.my/py- : </span>y - para usar margem ou padding, tanto na parte superior quanto na inferior;
+                </li>                
+            </ul>
+            <div style="width: 100%;height: 25px;"></div>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-secondary active font-weight-bold">O campo tamanho pode ser:</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-0  : </span>      para remover o padding ou margin;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-1 : </span>define marginou paddingpara .25rem(4px se o tamanho da fonte for 16px);</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-2 : </span>define marginou paddingpara .5rem(8px se o tamanho da fonte for 16px);</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-3 : </span>define marginou paddingpara 1rem(16px se o tamanho da fonte for 16px);</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-4 : </span>define marginou paddingpara 1.5rem(24px se o tamanho da fonte for 16px);</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-5 : </span> define marginou paddingpara 3rem(48px se o tamanho da fonte for 16px);</li>
+                <li class="list-group-item"><span class="font-weight-bold">.-auto : </span>pdefine margin para automático</li>               
+            </ul>
+            <p class="lead">
+                <span class="font-weight-bold">Nota: </span>as margens também podem ser negativas, adicionando um "n" na frente do tamanho.
+            </p>
+            <div style="width: 100%;height: 50px;"></div>
+
+            <h2 class="display-4" id="btstColor">3 - Classes de cores e bordas</h2>
+            <div style="width: 100%;height: 25px;"></div>
+
+            <p class="h4">
+                3.1 - Cores em Textos Contextuais :
+            </p>
+            <p>
+                O Bootstrap 4 tem algumas classes contextuais que podem ser usadas para fornecer "significado por meio de cores":
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-secondary active font-weight-bold">O campo tamanho pode ser:</li>
+                <li class="list-group-item text-muted"><span class="font-weight-bold">.text-muted : </span>     Este texto está desativado;</li>
+                <li class="list-group-item text-primary"><span class="font-weight-bold">.text-primary : </span>Este texto é importante;</li>
+                <li class="list-group-item text-success"><span class="font-weight-bold">.text-success: </span>Este texto indica sucesso;</li>
+                <li class="list-group-item"><span class="font-weight-bold">.text-info : </span>Este texto representa alguma informação;</li>
+                <li class="list-group-item text-warning"><span class="font-weight-bold">.text-warning : </span>Este texto representa um aviso;</li>
+                <li class="list-group-item text-danger"><span class="font-weight-bold">.text-danger : </span> Este Texto representa perigo;</li>
+                <li class="list-group-item text-secondary"><span class="font-weight-bold">.text-secondary : </span>Texto Secundário</li>
+                <li class="list-group-item text-dark"><span class="font-weight-bold">.text-dark : </span>Este texto é cinza escuro;</li>
+                <li class="list-group-item text-body"><span class="font-weight-bold">.text-body : </span>Cor padrão do corpo (geralmente preto);</li>
+                <li class="list-group-item bg-secondary text-light"><span class="font-weight-bold">.text-light: </span>Este texto é cinza claro em background escuro;</li>
+                <li class="list-group-item bg-secondary text-white"><span class="font-weight-bold">.text-white: </span>Este texto é branco em background escuro.</li>         
+            </ul>
+
+            <div style="width: 100%;height: 25px;"></div>
+
+            <p class="h4">
+                3.2 - Cores em Planos de Fundo Contextuais:
+            </p>
+
+            <p class="bg-primary text-white">.bg-primary: Este background é importante;</p>
+            <p class="bg-success text-white">.bg-success: Este background indica sucesso;</p>
+            <p class="bg-info text-white">.bg-info: Este background representa alguma informação;</p>
+            <p class="bg-warning text-white">.bg-warning: Este background representa um aviso;</p>
+            <p class="bg-danger text-white">.bg-danger: Este background representa perigo;</p>
+            <p class="bg-secondary text-white">.bg-secondary: Background Secundário</p>
+            <p class="bg-dark text-white">.bg-dark: Este background é cinza escuro;.</p>
+            <p class="bg-light text-dark">.bg-light: Este background é claro;</p>
+            <div style="width: 100%;height: 25px;"></div>
+
+            <p class="h4">
+                3.3 - Bordas:
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+            <ul class="list-group mx-4 col-5">
+                <li class="list-group-item list-group-item-action list-group-item-secondary active font-weight-bold">Adicione bordas com:</li>
+                <li class="list-group-item">.border</li>
+                <li class="list-group-item">.border-top</li>
+                <li class="list-group-item">.border-right</li>
+                <li class="list-group-item">.border-bottom</li>
+                <li class="list-group-item">.border-left</li>     
+            </ul>
+            <div style="width: 100%;height: 25px;"></div>
+            <ul class="list-group mx-4 col-5">
+                <li class="list-group-item list-group-item-action list-group-item-secondary active font-weight-bold">Remova bordas com:</li>
+                <li class="list-group-item">.border-0</li>
+                <li class="list-group-item">.border-top-0</li>
+                <li class="list-group-item">.border-right-0</li>
+                <li class="list-group-item">.border-bottom-0</li>
+                <li class="list-group-item">.border-left-0</li>     
+            </ul>
+            <p class="lead">
+                <span class="font-weight-bold">Cor da borda </span>Altere a cor da borda usando utilitários criados a partir das nossas cores de tema: .border-primary,.border-secondary, .border-success, .border-danger, .border-warning, .border-info, .border-light, .border-dark, .border-white .
+            </p>
+
+            <div style="width: 100%;height: 50px;"></div>
+
+            <h2 class="display-4" id="btstButton">4 - Componentes botões e Dropdown</h2>
+            <p class="h4">
+                4.1 - Botões:
+            </p>
+            <p>
+                O Bootstrap 4 oferece diferentes estilos de botões:
+            </p>
+            <p>
+                As classes de botão podem ser usadas nos elementos  'a', 'button' ou 'input':
+            </p>
+            <p>
+                Altere o estilo dos botões usando utilitários criados a partir das nossas cores de tema: .btn-primary,.btn-secondary, .btn-success, .btn-danger, .btn-warning, .btn-info, .btn-light, .btn-dark, .btn-white, btn-link .
+            </p>
+            <button type="button" class="btn">Basic(Apenas .btn)</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-link">Link</button>
+
+            <div style="width: 100%;height: 25px;"></div>
+            <p>
+                O Bootstrap 4 fornece oito botões de contorno / bordas:
+            </p>
+            <p>
+                <button type="button" class="btn btn-outline-primary">Primary</button>
+                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                <button type="button" class="btn btn-outline-success">Success</button>
+                <button type="button" class="btn btn-outline-info">Info</button>
+                <button type="button" class="btn btn-outline-warning">Warning</button>
+                <button type="button" class="btn btn-outline-danger">Danger</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+                <button type="button" class="btn btn-outline-light text-dark">Light</button>
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+            <p>
+            A classe .active faz com que um botão pareça pressionado e o disabled atributo torne um botão não clicável. Observe que os elementos 'a' não suportam o atributo disabled e devem, portanto, usar a classe .disabled para fazer com que pareça visualmente desativado.
+            </p>
+                <button type="button" class="btn btn-primary active">Active Primary</button>
+                <button type="button" class="btn btn-primary" disabled>Disabled Primary</button>
+                <a href="#" class="btn btn-primary disabled">Disabled Link</a>
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+            <p class="h4">
+                4.2 - Dropdown:
+            </p>
+            <p>
+                Um Dropdown é um menu alternável que permite ao usuário escolher um valor de uma lista predefinida:
+            </p>
+            <p>
+                A classe '.dropdown' indica um dropdown.
+
+                Para abrir o dropdown, use um botão ou link com uma classe de .dropdown-toggle e o data-toggle="dropdown" como atributo.
+
+                Adicione a classe .dropdown-menu a um 'div' elemento para realmente construir o dropdown. Em seguida, adicione a .dropdown-itemclasse a cada elemento (links ou botões) dentro do dropdown.
+            </p>
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+              </div>
+              <span class="font-weight-bold">Nota: </span>A .dropdown-dividerclasse é usada para separar links dentro do menu suspenso com uma borda horizontal fina.
+            <div style="width: 100%;height: 50px;"></div>
+
+            <h2 class="display-4" id="btstInput">5 - Campos de texto input</h2>
+            <div style="width: 100%;height: 25px;"></div>
+
+            <p class="h4">
+                5.1 - Controles de formulário suportados:
+            </p>
+            <p>
+            O bootstrap suporta os seguintes controles de formulário:
+            </p>
+            <p>
+                <ul>
+                    <li>input</li>
+                    <li>textarea</li>
+                    <li>checkbox</li>
+                    <li>radio</li>
+                    <li>select</li>
+                </ul>
+            </p>
+            <div style="width: 100%;height: 25px;"></div>
+            <dl class="row">
+                <dt class="col-sm-2"> <span class="font-weight-bold">5.1.1 - Bootstrap Input: </span></dt>
+                <dd class="col-sm-10">
+                    <p>
+                        O Bootstrap suporta todos os tipos de entrada HTML5: texto, senha, data e hora, data e hora local, data, mês, hora, semana, número, e-mail, url, pesquisa, tel e cor.
+                    </p>
+                    <p>
+                        <span class="font-weight-bold">Nota: </span>As entradas NÃO serão totalmente estilizadas se seu tipo não for declarado corretamente!
+                    </p>
+                </dd>
+
+                <dt class="col-sm-2"><span class="font-weight-bold">5.1.2 - Bootstrap Textarea: </span></dt>
+                <dd class="col-sm-10">
+                    <p>
+                        O exemplo a seguir contém uma textarea:
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                    </p>  
+                </dd>
+                <dt class="col-sm-2"> <span class="font-weight-bold">5.1.3 - Bootstrap Input: </span></dt>
+                <dd class="col-sm-10">
+                    <p>
+                        As caixas de seleção são usadas se você quiser que o usuário selecione qualquer número de opções em uma lista de opções predefinidas.
+                    </p>
+                    <p>
+                        O exemplo a seguir contém três caixas de seleção. A última opção está desabilitada:
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="">Option 1
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="">Option 2
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+                            </label>
+                          </div>
+                          
+                    </p>
+                </dd>
+            </dl>
+        </main>
+        <footer class="card-footer bg-dark text-white">
+            <div class="text-center">
+                <img src="https://getbootstrap.com.br/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                <p class="text-center my-lg-0">Tulani Conceição da Silva | 2021</p>
+            </div>
+
+
+        </footer>
+    </div>
+</body>
+
+</html>
