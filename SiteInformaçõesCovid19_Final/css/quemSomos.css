@@ -1,0 +1,373 @@
+/* ------------------------------ */
+/* Estilizando a página Quem Somos */
+/* ------------------------------- */
+
+/* ------------------------------ */
+/* Resetando a página */
+/* ------------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* estrutura do grid  */
+header{
+    display: grid;
+    grid-template-columns: 4;
+    grid-template-rows: 4;
+}
+
+/* estrutura da div lupa */
+#lupa{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+    background-color:#333;
+    width: 100%;
+}
+
+/* modificacao do tmh da imagem lupa */
+#lupa img{
+    width: 55px;
+    height: 40px;
+}
+
+/* estrutura da div datahora e estilização basica */
+#datahora{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #333;
+    color: #f8f8f8;
+    font-size: 30px;
+    width: 100%;
+    text-align: right;
+}
+
+/* estrutura da div bandeiraDeSp */
+#bandeiraDeSp{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* background-color: rgba(0, 0, 0, 0.096); */
+    width: 100%;            
+}
+
+/* Estrutura da frase no menu */
+#frase{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    margin-top: 30px;
+    margin-right: 1%;
+    color: rgb(24, 78, 78);
+    
+}
+
+/* estilização da imagem bandeira */
+#bandeiraSp{
+    width: 150px;
+    height: 100px;   
+}
+
+
+/* estrutura da div q tem o botao menu */
+#DivbotaoMenu{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 100%;
+    background-color: rgb(77, 179, 226);
+}
+
+/* estilização do botao menu */
+#botaoMenu{
+    width: 32px;
+    height: 32px;
+    margin-left: 0.5em;
+
+}
+
+/* estrutura do menu (home, atualizações, quem somos, suporte) */
+#menu{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    background-color: rgb(77, 179, 226);
+    border-radius: 5px;
+    position: absolute;
+    top: 29%;
+    left: 0%;
+    padding-left: 1%;
+    width: max-content;
+}
+
+/* estilização das palavras do menu */
+#menu a{
+    text-decoration: none;
+    color: rgb(0, 56, 56);
+    margin: 30px;
+    margin-left: 0%;
+}
+/* quando o mouse é passado na palavra acontece isso: */
+#menu a:hover{
+    color: rgb(47, 47, 47);
+}
+
+
+
+/* estilizando e estruturando o rodapé!! */
+
+#rodape{
+    margin-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: rgb(13, 71, 71);
+    grid-template-rows: 100px;
+    align-items: center;
+
+}
+
+#avisoDePrivacidade{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: #f8f8f8;
+    padding-left: 20px;
+}
+
+#avisoDePrivacidade p:hover{
+    color: #dddddd;
+}
+
+ #RedeSocial{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: 120px;
+   
+}
+
+#RedeSocial img{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ #copyright{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    color: #f8f8f8;
+}  
+
+
+/* ------------------------------ */
+/* Começando o body
+/* ------------------------------- */
+
+
+body{
+    width: 100%;
+    height:1200px;
+    font-family: "Didact Gothic";
+    font-size: 22px;
+}
+
+/* ------------------------------ */
+/* Definindo o tamanho do header */
+/* ------------------------------- */
+
+/* header{
+    width: 100%;
+    height: 17%;
+} */
+
+/* ------------------------------ */
+/* Estilizando parte 1 */
+/* ------------------------------- */
+
+.part1{
+    width: 100%;
+    height: 350px;
+    background-image: url(../imagens/covid-blue2.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center; 
+    color: #f8f8f8;
+}
+
+/* Estilizando o título do Banner */
+
+#titulo1{
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    height: 20%;
+    line-height: 70px;
+}
+
+#titulo2{
+    margin-top: 20px;
+    text-align: center;
+}
+
+span{
+    color: yellow;
+}
+
+/* ------------------------------ */
+/* Estilizando parte 2 */
+/* ------------------------------- */
+
+#part2 h3{
+    padding-top: 60px;
+    width: 60%;
+    text-align: justify;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#part2 hr{
+    border: 1px solid;
+    color: gray;
+    margin-top: 30px;
+}
+
+/* ------------------------------ */
+/* Estilizando parte 3 */
+/* ------------------------------- */
+
+#part3{
+    width: 90%;
+    margin-left: 20px;
+    font-family: "Didact Gothic";
+    margin: 0 auto;
+}
+
+#part3 h3{
+    background-color: #333;
+    color: #f8f8f8;
+}
+
+#part3 p{
+    text-align: justify;
+    /* font-size: 25px; */
+}
+
+/* ------------------------------ */
+/* Estilizando parte 4 */
+/* ------------------------------- */
+
+
+#part4 h1{
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+#part4 hr{
+    border: 1px solid;
+    color: gray;
+    margin-top: 30px;
+}
+
+/* ------------------------------ */
+/* Estilizando parte 5 */
+/* ------------------------------- */
+
+#part5{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 300px;
+    gap: 30px;
+}
+
+#part5 img{
+    width: 90%;
+    height: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+/* ------------------------------ */
+/* Estilizando parte 6 */
+/* ------------------------------- */
+
+#part6{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 150px 60px 200px;
+}
+
+#part6 img{
+    width: 10%;
+    margin: 30px auto;
+}
+
+#part6 h3{
+    width: 90%;
+    height: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: justify;
+    /* border-bottom: 1px solid lightgray; */
+}
+
+#p1, #p2, #p3{
+    width: 90%;
+    height: 50%;
+    margin-left: 20px;
+    text-align: justify;
+    display: none;
+    margin-top: 30px;
+}
+
+
+#part7 h1{
+    margin-top: 300px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#part8{
+    display: flex;
+    width: 40%;
+    height: 500px;
+    margin:0 auto;
+    justify-content: center;
+    background-image: url(../imagens/DINTT.png);
+    background-repeat: no-repeat;
+    background-size: inherit;
+    align-items: flex-start;
+}
+
+
+#part9 p{
+    text-align: justify;
+
+    width: 80%;
+    height: 30%;
+}
+
+
+#part9{
+    /* display: flex; */
+    width: 40%;
+    height: 40%;
+    margin:0 auto;
+    /* justify-content: center; */
+}

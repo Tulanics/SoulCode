@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/index.css" />  <!--Index CSS-->
+    <script type="text/javascript" src="../libs/jquery/jquery-3.6.0.min.js"></script> <!--Biblioteca jquery-->
+    <script type="text/javascript" src="../js/index.js"></script> <!--JS-->
+
+    <title>Informe-se sobre a Covid-19 em SP</title>
+    <!-- Header e Foter !!--> 
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+    <script type="text/javascript"> 
+
+    //botao de acessibilidade
+    function aumentar(){
+       $(document).ready(
+           function(){
+              var corpo = $("body").css("font-size", "30px");
+           }
+       )
+    }
+    function diminuir(){
+        $(document).ready(
+            function(){
+                var corpo = $("body").css("font-size","20px"); 
+            }
+        )
+    }
+
+    
+    //funcao data e hora:
+    
+    var arrayDia = new Array(7);
+    
+    arrayDia[0] = "Domingo";
+    
+    arrayDia[1] = "Segunda";
+    
+    arrayDia[2] = "Terça";
+    
+    arrayDia[3] = "Quarta";
+    
+    arrayDia[4] = "Quinta";
+    
+    arrayDia[5] = "Sexta";
+    
+    arrayDia[6] = "Sábado";
+    
+    
+    var arrayMes = new Array(12);
+    
+    arrayMes[0] = "Janeiro";
+    
+    arrayMes[1] = "Fevereiro";
+    
+    arrayMes[2] = "Março";
+    
+    arrayMes[3] = "Abril";
+    
+    arrayMes[4] = "Maio";
+    
+    arrayMes[5] = "Junho";
+    
+    arrayMes[6] = "Julho";
+    
+    arrayMes[7] = "Agosto";
+    
+    arrayMes[8] = "Setembro";
+    
+    arrayMes[9] = "Outubro";
+    
+    arrayMes[10] = "Novembro";
+    
+    arrayMes[11] = "Dezembro";
+    
+    function mostrarDataHora(hora, diaSemana, dia, mes, ano){
+        
+        retorno = "" + hora + ""
+        
+        retorno += "" + diaSemana + ", " + dia + " de " + mes + " de " + ano;
+        
+        document.getElementById("datahora").innerHTML = retorno;
+
+    }
+    function atualizarDataHora(){
+        
+        var dataAtual = new Date();
+        
+        var dia = dataAtual.getDate();
+        
+        var diaSemana = getDiaExtenso(dataAtual.getDay());
+        
+        var mes = getMesExtenso(dataAtual.getMonth());
+        
+        var ano = dataAtual.getFullYear();
+        
+        var hora = dataAtual.getHours();
+        
+        var minuto = dataAtual.getMinutes();
+        
+        var segundo = dataAtual.getSeconds();
+        
+        var horaImprimivel = hora + ":" + minuto + ":" + segundo;
+        
+        mostrarDataHora(horaImprimivel+ " ", diaSemana, dia, mes, ano);
+        
+        setTimeout("atualizarDataHora()", 1000);
+        
+    }
+    function getMesExtenso(mes){
+        
+        return this.arrayMes[mes];
+        
+    }
+    function getDiaExtenso(dia){
+        
+        return this.arrayDia[dia];
+        
+    } 
+
+
+    //botao de menu
+
+    $(document).ready(
+        function(){
+            $("#menu").hide()
+        }
+    )
+    $(document).ready(
+        function(){
+            $("#botaoMenu").click(
+                function(){
+                    $("#menu").slideToggle(1000)
+                }
+            )
+        }
+    )
+    
+    </script>
+
+<!-- <style type="text/css">
+
+    /* pagina inteira */
+    *{
+    margin: 0 auto;
+    }
+
+    /* estrutura do grid  */
+    header{
+        display: grid;
+        grid-template-columns: 4;
+        grid-template-rows: 4;
+    }
+
+    /* estrutura da div lupa */
+    #lupa{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background-color:#333;
+        width: 100%;
+    }
+
+    /* modificacao do tmh da imagem lupa */
+    #lupa img{
+        width: 55px;
+        height: 40px;
+    }
+
+    /* estrutura da div datahora e estilização basica */
+    #datahora{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background-color: #333;
+        color: #f8f8f8;
+        font-size: 30px;
+        width: 100%;
+        text-align: right;
+    }
+
+    /* estrutura da div bandeiraDeSp */
+    #bandeiraDeSp{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        background-color: rgba(0, 0, 0, 0.096);
+        width: 100%;            
+    }
+
+    /* Estrutura da frase no menu */
+    #frase{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        margin-top: 30px;
+        margin-right: 1%;
+        color: rgb(24, 78, 78);
+    }
+
+    /* estilização da imagem bandeira */
+    #bandeiraSp{
+        width: 150px;
+        height: 100px;
+    }
+    
+    /* estrutura da div q tem o botao menu */
+    #DivbotaoMenu{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        width: 100%;
+        background-color: rgb(77, 179, 226);
+    }
+
+    /* estilização do botao menu */
+    #botaoMenu{
+        width: 32px;
+        height: 32px;
+        margin-left: 0.5em;
+    }
+
+    /* estrutura do menu (home, atualizações, quem somos, suporte) */
+    #menu{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        background-color: rgb(77, 179, 226);
+        border-radius: 5px;
+        position: absolute;
+        top: 29%;
+        left: 0%;
+        padding-left: 1%;
+        width: max-content;
+    }
+
+    /* estilização das palavras do menu */
+    #menu a{
+        text-decoration: none;
+        font-family: 'Inconsolata', monospace;
+        color: rgb(0, 56, 56);
+        margin: 30px;
+        margin-left: 0%;
+    }
+    /* quando o mouse é passado na palavra acontece isso: */
+    #menu a:hover{
+        color: rgb(47, 47, 47);
+    }
+    </style> -->
+
+</head>
+<!-- onload tem q ficar aqui (funcao pronta da data e hora) -->
+<body onload="atualizarDataHora()">
+<header>
+    <!-- Fiz uma div p cada coisa: 
+        div para Lupa 
+        div para data e hora
+        div para bandeira
+        div para botao do menu
+        div para o menu que surge
+    -->
+
+    <div id="lupa" onclick="aumentar()" ondblclick="diminuir()"> <img src="../imagens/lupa+papel.png" alt="lupa"> </div>
+
+    <div id="datahora"> </div>
+
+
+    <div id="bandeiraDeSp">
+        <img id="bandeiraSp" src="../imagens/Bandeira_do_estado_de_São_Paulo.svg" alt="Bandeira de São Paulo"> </div>
+        <p id="frase" style="font-size: 35px; line-height: 1.6; letter-spacing: 0.199em; font-weight: 300; font-style: italic;"> Governo de SP contra o coronavírus </p>
+    <div id="DivbotaoMenu"><img id= "botaoMenu" src="../imagens/menu.png" alt=""> </div>
+    <div id="menu"> 
+        <a href="..//html/index.html"> Home</a>
+        <a href="..//html/info.html"> Informações</a>
+        <a href="..//html/quemSomos.html"> Quem somos</a>
+        <a href="../html/formulario.html"> Vacine-se</a>
+    </div>
+</header>
+
+<!----------------------------------->
+<!---------------------------------->
+
+<!--Aqui inicia a index!! -->
+
+<!--Banner -->
+    <div id="div_inicial">
+      <img id="foto_inicial" src="../imagens/luva.jpg" />
+    </div>
+
+<!--Container do conteúdo -->
+    <section id="container">
+      <div id="left"></div>
+      <div id="right"></div>
+
+<!--1. Informações sobre Vacinas aprovadas em fase emergencial (Informando eficácia e métodos de cada uma)-->
+    <main>
+        <section>
+            <div id="div1">
+                <div id="div1_1">
+                <img src="../imagens/imagemvacina.png" />
+                <p>Informações sobre vacinas aprovadas em fase emergencial</p>
+            </div>
+        
+
+            <div id="div1_2">
+                <div class="texto">      
+                    <p>
+                    A Agência Nacional de Vigilância Sanitária (Anvisa) recebeu neste sábado o segundo pedido de uso definitivo de uma vacina contra Covid-19, feito pela farmacêutica norte-americana Pfizer.<hr size=5>
+                
+                    Antes, em 29 de janeiro, a Fundação Oswaldo Cruz (Fiocruz) fez requisição similar para o imunizante produzido pela Universidade de Oxford em parceria com o laboratório AstraZeneca. Os dois processos ainda estão em andamento na agência reguladora brasileira.
+                    Além disso, a Anvisa já autorizou dois imunizantes para uso emergencial no país: a própria vacina de Oxford, em pedido feito pela Fiocruz, e a chinesa Coronavac, em requisição apresentada pelo Instituto Butantan.<hr size=5><br>
+
+                    Veja abaixo como está o andamento da autorização das vacinas no Brasil:<hr size=5><br>
+
+                    <h3>Uso emergencial aprovado</h3><br>
+                    <h3>• Coronavac</h3>
+                    Situação: Vacina aprovada pela Anvisa para uso emergencial no dia 17 de janeiro de 2021.<br>
+                    Desenvolvedor: Sinovac (China)<br>
+                    País de origem: China<br>
+                    Feita em parceria com: Instituto Butantan (SP)<br>
+                    Estados no Brasil em que foi testada: São Paulo, Rio de Janeiro, Minas Gerais, Distrito Federal, Paraná e Rio Grande do Sul, em 22 centros de pesquisa<br>
+                    Voluntários: No Brasil, 13 mil (inicialmente eram 9 mil)<br>
+                    Boas práticas de fabricação: Inspeção feita no Butantan entre 30/11 e 4/12. Certificação publicada em 21/12.<br>
+                    Eficácia: Eficácia global de 50,38%. Eficácia de 78% em casos leves e de 100% em casos graves e moderados.<br>
+                    <hr size=5><br>
+                    <h3>• Vacina: ChAdOx1 nCoV-19 (Vacina de Oxford)</h3>
+                    Situação: Vacina aprovada pela Anvisa para uso emergencial no dia 17 de janeiro de 2021.<br>
+                    Desenvolvedor: Universidade de Oxford e AstraZeneca<br>
+                    País de origem: Reino Unido<br>
+                    Feita em parceria com: Fiocruz, Unifesp e Ministério da Saúde.<br>
+                    Estados no Brasil em que foi testada: São Paulo, no Centro Paulista de Investigação Clínica (Cepic), e na Bahia, na Instituição Obras Sociais Irmã Dulce<br>
+                    Voluntários: 10 mil no Brasil<br>
+                    Boas práticas de fabricação: Inspeção feita na Fiocruz entre 7/12 e 4/12. Certificação publicada em 23/12.<br>
+                    Eficácia: Eficácia média de 70,4%. No regime de dosagem com duas completas atingiu 62,1% de eficácia.<br>Com dose fracionada e dose completa, atingiu 90% de eficácia.<br>
+                    Pedido de uso definitivo em andamento
+                    <hr size=5><br>
+                    <h3>• Vacina: mRNA BNT162, da Pfizer/BioNTech</h3>
+                    Situação: A Pfizer enviou à Anvisa o pedido de registro definitivo da vacina da Pfizer no dia 6 de fevereiro de 2021; 100% da documentação do pedido de registro está sendo analisada.<br>  
+                    Desenvolvedor: Pfizer e BioNTech<br>
+                    País de origem: EUA/<br>
+                    Feita em parceria com: Centro Paulista de Investigação Clínica (Cepic), em São Paulo, e Instituição Obras Sociais Irmã Dulce, na Bahia.<br>
+                    Estados no Brasil em que foi testada: São Paulo e Bahia.<br>
+                    Voluntários: 2.900 no Brasil (São Paulo e Bahia) e mais de 43 mil no mundo.<br>
+                    Boas práticas de fabricação: Certificação de duas fábricas publicada em 28/12. Uma fábrica já tinha certificação da Anvisa, mas ainda precisa enviar dados.<br>
+                    Eficácia: 90% eficaz.<hr size=5><br>
+                    <h3>• Vacina: ChAdOx1 nCoV-19 (Vacina de Oxford)</h3>
+                    Submissão Contínua De Dados<hr size=5><br>
+                    <h3>• Vacina: Ad26.COV2.S, da Johnson & Johnson</h3>
+                    Situação: Até o momento, a Janssen não solicitou uso emergencial da Vacina; a documentação tem sido avaliada como parte do processo de submissão <br>
+                    Desenvolvedor: Johnson e Johnson (Janssen-Cilag)<br>
+                    País de origem: EUA<br>
+                    Feita em parceria com: Grupo Hospitalar Conceição.<br>
+                    Estados no Brasil foi testada: São Paulo, Rio Grande do Sul, Rio de Janeiro, Paraná, Minas Gerais, Bahia, Distrito Federal, Mato Grosso, Mato Grosso do Sul, Santa Catarina e Rio Grande do Norte.<br>
+                    Boas práticas de fabricação: Solicitada, mas faltam dados da Janssen ainda.<br>
+                    Voluntários: 45 mil voluntários no mundo. No mundo, além de Brasil, os participantes são Argentina, Chile, Colômbia, México, Peru, África do Sul e Estados Unidos.<br>
+                    Eficácia: Eficácia de 66% na prevenção de doenças moderadas e graves; mais de 85% de eficácia contra doenças graves.<br>
+                    Pedido de uso emergencial em andamento<hr size=5><br>
+                    <h3>• Vacina: Sputnik V</h3>
+                    Situação: A vacina ainda não recebeu a validação da fase 3 dos ensaios clínicos pela Anvisa. <br>
+                    Desenvolvedor: Instituto de Pesquisa Gamaleya<br>
+                    País de origem: Rússia<br>
+                    Feita em parceria com: Tecpar (Paraná) / União Química<br>
+                    Estados no Brasil em que será testada: Paraná e Bahia<br>
+                    Eficácia: 91,6%, segundo estudo preliminar publicado pela The Lancet<br>
+                    Pedido de autorização para Fase 3 de testes no Brasil<hr size=5><br>
+                    <h3>• Vacina: Covaxin</h3>
+                    Situação: Precisa Farmacêutica apresentou em 5 de fevereiro de 2021 o pedido de autorização de pesquisa clínica de fase 3 para a vacina Covaxin no Brasil.<br>
+                    Desenvolvedor: Bharat Biotech<br>
+                    País de origem: Índia<br>
+                    Feita em parceria com: Precisa Farmacêutica<br>
+                    Fase 1 de testes em andamento<hr size=5><br>
+                    <h3>• Vacina: UB-612</h3>
+                    Situação: A Dasa está em fase de ajuste do protocolo, a partir dos resultados da fase I. <br>
+                    Desenvolvedor: COVAXX, subsidiária da United Biomedical Inc - pesquisa será conduzida pela Dasa e a Mafra, com recursos doados por MRV, Banco Inter e Localiza<br>
+                    Estágio: Fase 2/3<br>
+                    País de origem: China<br>
+                    Feita em parceria com: Dasa<br>
+                    Estados no Brasil com testagem: Não <br>
+                    Voluntários: 3 mil<br>
+                    Início dos testes: não foi informado.<br>
+                    Foi negociada, mas paralisou processo<hr size=5><br>
+                    <h3>• Vacina: Instituto Biológico de Wuhan/ Sinopharm</h3>
+                    Situação: Segundo o Governo da Bahia, que firmou acordo com a farmacêutica, "por decisão do grupo chinês, eles desistiram de testar no Brasil"<br>
+                    Desenvolvedor: Grupo Nacional Biotecnológico da China – CNBG/ "Sinopharm"<br>
+                    País de origem: China<br>
+                    Feita em parceria com: Bahiafarma (Bahia) e Tecpar (Paraná)<br>
+                    Estados no Brasil em que seria testada: Bahia e Paraná.<hr size=5><br>
+                    <a href="https://www.cnnbrasil.com.br/saude/2021/02/06/saiba-quais-vacinas-tem-uso-emergencial-aprovado-e-quais-aguardam-aval-da-anvisa">☞ Saiba quais vacinas tem uso emergencial aprovado e quais aguardam aval da anvisa</a><br>
+
+                    <a href="https://www.who.int/pt/news-room/feature-stories/detail/the-race-for-a-covid-19-vaccine-explained">☞ Vacinas explicadas</a>
+                    </p>
+                </div>
+            </div>   
+        </section>
+
+<!--2. Protocolos de combate adotados (Vide OMS)-->
+        <section>
+            <div id="div2">
+
+                <div id="div2_1">
+                    <img src="../imagens/protocolo.jpg" />
+                    <p>Protocolos de combate adotados</p>
+                </div>
+
+                <div id="div2_2">
+                    <div class="texto">
+                        <p>
+                        Diante da Emergência em Saúde Pública de Importância Nacional (Espin) por doença respiratória, causada pelo novo coronavírus (2019-nCoV) e considerando-se as recomendações da Organização Mundial de Saúde (OMS), as equipes de vigilância dos estados e municípios, bem como quaisquer serviços de saúde, devem ficar alertas aos casos de pessoas com sintomatologia respiratória e que apresentam histórico de viagens para áreas de transmissão local nos últimos 14 dias.
+                        <hr size=5><br>
+                        </p>
+
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/EJ2BqDEQE34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/hW52ZvKm9fM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <p>
+                        A vigilância epidemiológica de infecção humana pelo 2019-nCoV está sendo construída à medida que a OMS consolida as informações recebidas dos países e novas evidências técnicas e científicas são publicadas. Deste modo, o documento apresentado está sendo estruturado com base nas ações já existentes para notificação, registro, investigação, manejo e adoção de medidas preventivas, em analogia ao conhecimento acumulado sobre o SARS-CoV, MERS-CoV e 2019-nCoV, que nunca ocorreram no Brasil, além de Planos de Vigilância de Síndrome Respiratória Aguda Grave (SRAG) e Síndrome Gripal (SG).<hr size=2>
+                        </p>
+                        
+                        Saiba mais:<br>
+                        <a href="https://www.arca.fiocruz.br/handle/icict/40195">☞ Ministério da Saúde lança Protocolo de Tratamento do Covid-19</a><br>
+                        <a href="https://www.paho.org/pt/covid19"> ☞Organização Pan - Americana da Saúde</a>
+                        <hr size=2>
+                        
+                        <h2>Como lavar as mãos com água e sabão</h2><br>
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/tUw6lRQ5cs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                        <h2>Como higienizar as mãos com álcool em gel</h2><br>
+                        <iframe width="100%" height="450"  src="https://www.youtube.com/embed/ETGIN1mdlmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                        <h2>5 medidas para se proteger da COVID-19</h2><br>
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/tiZCuWDI5No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <h2>Bebê Tubarão contra o coronavírus</h2><br>
+                        <iframe width="100%" height="450"  src="https://www.youtube.com/embed/74rCDQOmErA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--3. Potenciais técnicas de tratamento e/ou novos medicamentos-->
+        <section>
+            <div id="div3">
+
+                <div id="div3_1">
+                    <img src="../imagens/tratamentos-covid19-coronavirus.png" />
+                    <p>Potenciais técnicas de tratamento e/ou novos medicamentos</p>
+                </div>
+
+                <div id="div3_2">
+                    <div class="texto">
+                        <p>
+                            <i>Fernanda De Negri, Weverthon Machado, Ricardo de Brito*</i> <br>
+                            Desde o início da pandemia, a Organização Mundial da Saúde (OMS), vários países e a comunidade científica mundial têm se esforçado para buscar vacinas ou tratamentos mais eficazes para a Covid-19. Prova disso é o número de ensaios clínicos sobre a doença já em andamento em vários países.<br>
+                            Neste artigo, procura-se analisar quais países têm sido mais ativos na pesquisa de novos medicamentos e vacinas, qual o estágio dessas pesquisas e quais as principais substâncias ou tratamentos que vêm sendo testados contra a doença. Não são analisados, contudo, os resultados eventualmente já obtidos por esses ensaios.<hr size=5><br>
+
+                            <iframe width="100%" height="450" src="https://www.youtube.com/embed/IUQRlHRId4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            <h3>O processo de desenvolvimento de medicamentos e vacinas</h3>
+                            O desenvolvimento de um novo medicamento ou tratamento para qualquer doença envolve um longo processo que começa com a pesquisa básica realizada nos laboratórios das universidades e instituições de pesquisa, onde se conhece mais sobre o funcionamento das doenças e sobre substâncias que podem agir sobre elas. Essa pesquisa pode levar à descoberta, por exemplo, de uma nova molécula com potencial de atuar sobre determinada doença. Depois dessa descoberta, o processo de desenvolvimento de um novo medicamento, normalmente feito pela indústria farmacêutica, pode se estender por vários anos, entre estudos mais aprofundados sobre a molécula, testes pré-clínicos, que são aqueles realizados em tecidos ou em animais, e testes clínicos, que são aqueles realizados em seres humanos.<hr size=5><br>
+                            Os testes clínicos são, portanto, a fase final desse processo, e são necessários porque nem sempre uma abordagem que funciona bem em tecidos ou em animais, também funciona em pessoas. São estudos que buscam verificar a existência de efeitos colaterais não desejados e avaliar se um medicamento ou tratamento é eficaz em relação a tratamentos alternativos.<hr size=5><br>
+                            Esses testes seguem protocolos muito estritos de segurança e de ética, afinal, está se testando o efeito de uma substância desconhecida sobre o organismo, em pacientes reais. Geralmente, antes de ser realizado, esse tipo de teste precisa ser aprovado por comitês de ética[1] em pesquisa e pela agência reguladora em saúde. No caso brasileiro, a Agência Nacional de Vigilância Sanitária (ANVISA) é a responsável pela aprovação, que é pré-requisito obrigatório para o início de testes clínicos em humanos.<hr size=5><br>
+                            Além disso, todos os testes clínicos realizados em pacientes precisam ser registrados em alguma plataforma pública, a fim de garantir a transparência necessária para que os órgãos reguladores possam, no momento oportuno, analisar seus resultados e conceder (ou não) o registro do medicamento. Vários países, inclusive o Brasil, possuem plataformas de registros de testes clínicos integradas ao International Clinical Trials Registry Platform (ICTRP), da Organização Mundial de Saúde[2].<hr size=5><br>
+                            No Brasil, a aprovação de um determinado ensaio clínico pela Anvisa depende do registro nessa plataforma[3], que será a fonte de informações utilizadas no restante deste texto. Até 27 de maio, estavam registrados nessa plataforma 2.936 testes clínicos sobre a Covid-19. Esses ensaios podem ser apenas observacionais (também chamados epidemiológicos), nos quais os pesquisadores apenas observam como diversos fatores agem sobre os pacientes ou sobre a evolução da doença. Os ensaios que nos interessam aqui são os chamados ensaios intervencionais ou experimentais[4], nos quais os pesquisadores selecionam um grupo de pacientes para os quais será administrada uma nova droga (ou tratamento) e comparam sua evolução com a de pacientes de um grupo de controle, que recebem placebo ou o tratamento convencional[5]. São principalmente esses os ensaios utilizados para testar um novo medicamento ou um novo protocolo de tratamento[6]. Na plataforma da OMS, eles representam mais da metade dos ensaios registrados: 1.758 em 27 de maio.<hr size=5><br>
+
+                            <p><a href="https://www.ipea.gov.br/cts/pt/central-de-conteudo/artigos/artigos/198-quais-sao-as-pesquisas-em-andamento-para-prevencao-e-tratamento-da-covid-20">☞ Quais são as pesquisas em andamento para prevenção e tratamento da covid 19</a></p>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>  
+
+<!--6. Galeria de fotos que contenha fotos referente a campanha de vacinação .-->
+        <section>
+            <div id="div4">
+
+                <div id="div4_1">
+                    <img src="../imagens/vacinacao-covid19.jpeg" />
+                    <p>Campanha de vacinação</p>
+                </div>
+
+                <div id="div4_2">
+                    <p>
+                        O Governador João Doria lançou nesta quarta-feira (31) a campanha “Vacina Contra a Fome”. Desenvolvida pela Secretaria de Desenvolvimento Social com participação da Secretaria da Comunicação, a ação convida cada pessoa apta a se vacinar contra a COVID-19 a doar um quilo de alimento não perecível nos municípios participantes.
+                    </p>
+                    <iframe width="100%" height="450" src="https://www.youtube.com/embed/UDtwrZTV6Js" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    <div>
+                        <div><img src="../imagens/vac1.jpg" alt="Idosos se vacinando"></div>
+                        <div><img src="../imagens/vac2.jpg" alt="Homem se vacinando"></div>
+                        <div><img src="../imagens/vac3.jpg" alt="Idosa se vacinando"></div>
+                        <div><img src="../imagens/vac4.jpeg" alt="Indígena se vacinando"></div>
+                        <div><img src="../imagens/vac5.jpg" alt="Mulher com cartão de vacinação"></div>
+                        <div><img src="../imagens/vac6.jpeg" alt="Primeira mulher a ser vacinada no Brasil"></div>
+                        <div><img src="../imagens/vac7.jpg" alt="Idosa com cartão de vacinação"></div>
+                        <div><img src="../imagens/vac8.jpg" alt="Idosa com cartão de vacinação"></div>
+                        <div><img src="../imagens/vac9.jpg" alt="Fila de vacinação"></div>
+                        <div><img src="../imagens/vac10.jpeg" alt="Profissionais da saúde vacinados"></div>
+                        <div><img src="../imagens/vac11.jpg" alt="Vacinação no Hospital das Clínicas"></div>
+                        <div><img src="../imagens/vac12.jpg" alt="Dória com a vacina"></div>
+                        <div><img src="../imagens/vac13.jpg" alt="Instituto Butantã e vacina"></div>
+                        <div><img src="../imagens/vac14.png" alt="Campanha de vacinação"></div>
+                        <div><img src="../imagens/vac15.jpg" alt="Campanha de vacinação"></div>
+                        <div><img src="../imagens/vac16.jpg" alt="ButanVac"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--7. Uma pagina que indique o numero de ocupação de leitos UTI e enfermaria e informe a fase de alerta a contaminação bem como indique em uma tabela quais setores econômicos podem funcionar ou não , a entrada de dados de ocupação deve ser feito com 2 input e automaticamente deve mudar o padrão de cor(seguindo a fase) de algum elemento da pagina (tabela , plano de fundo ,ETC). Devido a cada estado estimar um padrão iremos nos basear pelo do estado de SP:https://www.saopaulo.sp.gov.br/wp-content/uploads/2020/05/plano-sp-fases-e-criterios.pdf
+        <section>     
+            <div id="div5">
+                <div id="div5_1">
+                    <img src="../imagens/taxa_contaminação.png" />
+                    <a href="#"><p>Ocupação de leitos UTI e enfermaria</p></a>
+                </div>
+
+                <div id="div5_2">
+                    <p></p>
+                </div>
+            </div>
+        </section>--> 
+    </section>
+ <!-- -------------------------------->
+ <!-- -------------------------------->
+   
+ <!-- Rodapé inicia aqui-->
+    <footer id="rodape">
+        <div id="avisoDePrivacidade"> 
+            <p> Aviso Legal de Privacidade</p>
+        </div>
+    
+        <div id="RedeSocial"> 
+            <a href="https://www.facebook.com/governosp/"><img src="../imagens/facebook.png" alt="1facebook" style="width: 10%"></a>
+        
+            <a href="https://www.youtube.com/channel/UCc7rfCbP90qiw3BgT-Iqc7g"><img src="../imagens/youtube(1).png" alt="Youtube" style="width: 10%"></a>
+        
+            <a href="https://twitter.com/governosp/"><img src="../imagens/twitter.png" alt="Twitter" style="width: 10%"></a>
+        
+            <a href="https://www.instagram.com/governosp/"><img src="../imagens/instagram.png" alt="Instagram" style="width: 10%"></a>
+        
+            <a href="https://t.me/governosp"><img src="../imagens/telegram.png" alt="Telegram" style="width: 10%"></a>
+        </div>
+    
+        </div>
+            <div id="copyright">  &copy; 2021 Estado de SP
+        </div>
+    </footer> 
+
+  </body>
+</html>

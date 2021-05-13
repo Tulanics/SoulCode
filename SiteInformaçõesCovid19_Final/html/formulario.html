@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- grupo 1 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/formulario.css">
+    <link href = " https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+    rel = "stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+
+    <script src="../libs/jquery/jquery-3.6.0.min.js"></script>
+    
+    <title>Formulário</title>
+    
+    <!-- <link rel="stylesheet" href="..//jquery-ui-1.12.1.custom/jquery-ui.css"> -->
+    <script src="..//jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <!-- <script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script> -->
+    
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+    </script>
+
+    <script src="..//js/formulario.js"></script>
+
+</head>
+
+<body onload="atualizarDataHora()">
+<header>
+     <!-- Fiz uma div p cada coisa: 
+            div para Lupa 
+            div para data e hora
+            div para bandeira
+            div para botao do menu
+            div para o menu que surge
+        -->
+
+        <div id="lupa" onclick="aumentar()" ondblclick="diminuir()"> <img src="..//imagens/lupa+papel.png" alt="lupa"> </div>
+
+        <div id="datahora"> </div>
+
+
+        <div id="bandeiraDeSp">
+            <img id="bandeiraSp" src="../imagens/Bandeira_do_estado_de_São_Paulo.svg" alt="Bandeira de São Paulo"> </div>
+            <p id="frase" style="font-size: 35px; line-height: 1.6; letter-spacing: 0.199em; font-weight: 300; font-style: italic;"> Governo de SP contra o coronavírus </p>
+        <div id="DivbotaoMenu"><img id= "botaoMenu" src="../imagens/menu.png" alt=""> </div>
+        <div id="menu"> 
+            <a href="../html/index.html"> Home</a>
+            <a href="../html/info.html"> Informações</a>
+            <a href="../html/quemSomos.html"> Quem somos</a>
+            <a href="../html/formulario.html"> Vacine-se</a>
+        </div>
+</header>
+
+</br></br></br>
+
+    <h1>Formulário de vacinação - COVID 19</h1>
+
+    <progress id='progress' max='100' value='0'> </progress>
+
+    <form action="" id="formulario">
+        <!-- (Data de NascimentoOK, sexo ok ,gestanteok ,Profissãook, EtniaOk, CPFOK, Nome completoOK e  Cartão SUSOK, ComorbidadesOk , pesoOK, alturaOK )
+        -->
+        <div>
+            <label for="nome">Nome Completo</label>
+            <input class='progress' type="text" id="nome" required="">
+        </div>
+        
+
+        <div>
+            <label for="">Data de Nascimento:</label>
+            <input class='progress' type="date" id="calendario" min="1891-05-06" max="2021-05-05"/>
+        </div>
+
+        <div>
+            <label for="cartão">N° do Cartão do SUS</label>
+            <input class='progress' type="text" id="cartão" required="">
+        </div>
+
+
+        <div>
+            <label for="email">Email:</label>
+            <input class='progress' type="email" name="email" id="" placeholder="email@email.com" required="">
+        </div>
+        <div>
+            <label for="cpf">CPF:</label>
+            <input class='progress' pattern="^\d{11}$" placeholder="Somente números" type="text" id="cpfFocus">
+        </div>
+
+        <div>
+            <label for="sexo">Sexo: </label></br>
+            <input class='progress' type="radio" name="sexo" value="Fem" id="feminino">
+            <label for="feminino">Feminino</label>
+            <input class='progress' type="radio" name="sexo" value="Masc" id="masculino">
+            <label for="masculino">Masculino</label>
+            <input class='progress' type="radio" name="sexo" value="Outros" id="outros">
+            <label for="outros">Outros</label>
+        </div>
+
+        <div id="gestante">
+            <!-- se for FEMININO -->
+            <label for="gestante">Gestante? </label>
+            <input type="radio" name="gestante" value="s">
+            <label for="gestante">Sim</label>
+            <input type="radio" name="gestante" value="n">
+            <label for="gestante">Não</label> 
+        </div>
+
+        <div>
+            <label for="">Profissão:</label>
+            <select class='progress' name="" id="profissao">                    
+                <option value="">Selecione:</option>
+                <option value="saude">Trabalhador de saúde</option>
+                <option value="seguranca">Profissionais de segurança pública e administração penitenciária</option>
+                <option value="educacao">Profissionais da educação a partir de 47 anos</option>
+                <option value="metro">Metroviários e ferroviários</option>
+                <option value="onibus">Motoristas e cobradores de ônibus</option>
+                <option value="outras">Outras</option><br />
+            </select>
+        </div>
+        
+
+        <!-- <div class='progress'>
+            <label for="etnia">Etnia:</label><br />
+            <input type="radio" name="etnia" value="branca" id="branca">
+            <label for="brancos">Branca</label>
+
+            <input type="radio" name="etnia" value="parda" id="parda">
+            <label for="parda">Parda</label>
+
+            <input type="radio" name="etnia" value="preta" id="preta">
+            <label for="preta">Preta</label>
+
+            <input type="radio" name="etnia" value="amarela" id="amarela">
+            <label for="amarela">Amarela</label>
+
+            <input type="radio" name="etnia" value="ind" id="ind">
+            <label for="ind">Indígena</label>
+
+            <input type="radio" name="etnia" value="qui" id="qui">
+            <label for="qui">Quilombola</label>
+
+            <input type="radio" name="etnia" value="nao_inf" id="nao_inf">
+            <label for="nao_inf">Não Informada</label>
+        </div> -->
+
+        <div>
+            <label for="">Etnia:</label>
+            <select class='progress' name="" id="etnia">                    
+                <option value="">Selecione:</option>
+                <option  value="branca" >Branca</option>
+                <option value="parda" >parda</option>
+                <option value="preta" >preta</option>
+                <option value="amarela" >amarela</option>
+                <option value="ind">indigena</option>
+                <option value="qui">quilombola</option>
+                <option value="nao_inf">nao informado</option><br />
+            </select>
+        </div>
+
+        <div>
+            <label for="">Digite seu peso</label>
+            <input class='progress' type="text" name="" id="peso" placeholder="Kg"> </br>
+            <label for="">Digite sua altura:</label>
+            <input class='progress' type="text" name="" id="altura" placeholder="metros" onchange="this.value = this.value.replace(/,/g, '.')">
+            <button onclick="imc()" id="calculeSeuImc">Calcule seu IMC</button>
+            <span id="cal_imc"></span>
+        </div>
+
+        <div><br />
+            <label for="">Comorbidades:</label>
+            <select class='progress' name="" id="comorbidade">                 
+                <option value="">Selecione:</option>
+                <option value="down">Síndrome de Down (18 a 59 anos)</option>
+                <option value="dialise">Pacientes renais em diálise (18 a 59 anos)</option>
+                <option value="imuno">Transplantados imunossuprimidos (18 a 59 anos)</option>
+                <option value="obeso">Obesidade</option>
+                <option value="nenhuma">Nenhuma das anteriores</option>
+            </select>
+        </div>
+          
+        <div> <br />
+            <label>Vacinas Aplicadas:</label>
+            <input type="checkbox">
+            <label>Tríplice bacteriana: difteria, tétano e coqueluche</label>
+            <input type="checkbox" id="pt"> 
+            <label>Hepatite B</label>
+            <input type="checkbox">
+            <label>Pneumonia</label>
+            <input type="checkbox">
+            <label>Febre Amarela</label>
+            <input type="checkbox">
+            <label>Gripe</label>
+            <input type="checkbox">
+            <label>HPV</label>
+            <input type="checkbox">
+            <label>Herpes-Zóster (cobreiro)</label>
+            <input type="checkbox">
+            <label>Dengue</label>
+            <input type="checkbox">
+            <label>Outras</label>
+         </div>
+
+         <div>
+            <label for="outras">Outras vacinas:</label>
+            <input type="text" id="outras" placeholder="Especifique as vacinas"/>
+        </div>
+
+        <div>
+            <input onclick="fases()" type="submit" value="Enviar" id="enviar">
+        </div>
+
+        <div id="faseVacina">
+            <!--  c. Ao coletar as informações informar em uma div em qual fase de vacinação o usuário está
+                contemplado ou não contemplado. -->
+        </div>
+
+
+        <!-- d. Uma barra de progresso onde o usuário verifique o seu progresso de preenchimento dos
+        campos , antes de poder clicar no botão de enviar a barra mostre 100% ou alguma alternativa
+        perceptível de complementação. -->
+        
+    </form>
+
+
+</body>
+ <footer id="rodape"> 
+
+        <div id="avisoDePrivacidade"> 
+            <p> Aviso Legal de Privacidade</p>
+        </div>
+
+
+        <div id="RedeSocial"> 
+            <a href="https://www.facebook.com/governosp/"><img src="../imagens/facebook.png" alt="1facebook"></a>
+
+            <a href="https://www.youtube.com/channel/UCc7rfCbP90qiw3BgT-Iqc7g"><img src="../imagens/youtube(1).png" alt="Youtube"></a>
+
+            <a href="https://twitter.com/governosp/"><img src="../imagens/twitter.png" alt="Twitter"></a>
+
+            <a href="https://www.instagram.com/governosp/"><img src="..//imagens/instagram.png" alt="Instagram"></a>
+
+            <a href="https://t.me/governosp"><img src="..//imagens/telegram.png" alt="Telegram"></a>
+        </div>
+        <div id="copyright">  &copy; 2021 Estado de SP
+        </div>
+        
+    </footer>
+</html>

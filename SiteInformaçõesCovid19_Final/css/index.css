@@ -1,0 +1,283 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* estrutura do grid  */
+header{
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 4;
+}
+
+/* estrutura da div lupa */
+#lupa{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color:#333;
+  width: 100%;
+}
+
+/* modificacao do tmh da imagem lupa */
+#lupa img{
+  width: 55px;
+  height: 40px;
+}
+
+/* estrutura da div datahora e estilização basica */
+#datahora{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: #333;
+  color: #f8f8f8;
+  font-size: 30px;
+  width: 100%;
+  text-align: right;
+}
+
+/* estrutura da div bandeiraDeSp */
+#bandeiraDeSp{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width: 100%;            
+}
+
+/* Estrutura da frase no menu */
+#frase{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  margin-top: 30px;
+  margin-right: 1%;
+  color: rgb(24, 78, 78);
+  font-family: "Didact Gothic";
+}
+
+/* estilização da imagem bandeira */
+#bandeiraSp{
+  width: 150px;
+  height: 100px;   
+}
+
+/* estrutura da div q tem o botao menu */
+#DivbotaoMenu{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 100%;
+  background-color: rgb(77, 179, 226);
+}
+
+/* estilização do botao menu */
+#botaoMenu{
+  width: 32px;
+  height: 32px;
+  margin-left: 0.5em;
+}
+
+/* estrutura do menu (home, atualizações, quem somos, suporte) */
+#menu{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgb(77, 179, 226);
+  border-radius: 5px;
+  position: absolute;
+  top: 29%;
+  left: 0%;
+  padding-left: 1%;
+  width: max-content;
+  font-size: 22px;
+  font-family: "Didact Gothic";
+}
+
+/* estilização das palavras do menu */
+#menu a{
+  text-decoration: none; 
+  color: rgb(0, 56, 56);
+  margin: 30px;
+  margin-left: 0%;
+}
+/* quando o mouse é passado na palavra acontece isso: */
+#menu a:hover{
+  color: rgb(47, 47, 47);
+}
+
+/* estilizando e estruturando o rodapé!! */
+#rodape{
+  margin-top: 40px;
+  width: 100%;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: rgb(13, 71, 71);
+  grid-template-rows: 100px;
+  align-items: center;
+
+}
+
+#avisoDePrivacidade{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  color: #f8f8f8;
+  padding-left: 20px;
+}
+
+#avisoDePrivacidade p:hover{
+  color: #dddddd;
+}
+
+#RedeSocial{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-left: 120px;
+ 
+}
+
+#RedeSocial img{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#copyright{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  color: #f8f8f8;
+}
+
+/*CSS index*/
+#container {
+  display: grid;
+  grid-template-columns: 1fr 15fr 1fr;
+  grid-row: auto;
+}
+img {
+  border-radius: 1%;
+  width: 100%;
+}
+.texto {
+  color: rgb(70, 69, 69);
+  font-family: "Didact Gothic";
+  font-size: 1.2em;
+  line-height: 1.5;
+  word-spacing: 10px;
+  text-align: justify;
+  text-indent: 1.5em;
+}
+#div1 p, #div2 p, #div3 p, #div4 p{
+  color: rgb(70, 69, 69);
+  font-family: "Didact Gothic";
+  font-weight: 700;
+  font-size: 1.8em;
+  line-height: 1.5;
+  word-spacing: 10px;
+  text-align: justify;
+ /* border: 1px black solid;*/
+}
+#div1_2 p, #div2_2 p, #div3_2 p, #div4_2 p{
+  font-size: 1.2em;
+}
+#container img {
+  width: 100%;
+}
+#right {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+#left {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+#div1,
+#div2,
+#div3,
+#div4,
+#div5 {
+  background-color:rgba(0, 0, 0, 0.096);
+  border-radius: 1%;
+  cursor: pointer;
+  margin: 2% 0;
+  padding: 2% 4% 0 4%;
+}
+#div1 img {
+  grid-column: 2 3;
+  grid-row: 1 2;
+  padding: 2% 0 0 0;
+}
+#div1 p{
+  grid-column: 2 3;
+  grid-row: 2 3;
+  margin: 0 0 2% 0;
+  padding: 2%;
+
+}
+#div2 img {
+  grid-column: 2 3;
+  grid-row: 3 4;
+  padding: 2% 0 0 0;
+}
+#div2 p {
+  grid-column: 2 3;
+  grid-row: 4 5;
+  margin: 0 0 2% 0;
+  padding: 2%;
+}
+#div3 img {
+  grid-column: 2 3;
+  grid-row: 5 6;
+  padding: 2% 0 0 0;
+}
+#div3 p {
+  grid-column: 2 3;
+  grid-row: 6 7;
+  margin: 0 0 2% 0;
+  padding: 2%;
+}
+#div4 img {
+  grid-column: 2 3;
+  grid-row: 7 8;
+  padding: 2% 0 0 0;
+}
+#div4 p {
+  grid-column: 2 3;
+  grid-row: 8 9;
+  margin: 0 0 2% 0;
+  padding: 2%;
+}
+/*#div5 img {
+  grid-column: 2 3;
+  grid-row: 9 10;
+  padding: 2% 0 0 0;
+}
+#div5 p {
+  grid-column: 2 3;
+  grid-row: 10 11;
+  margin: 0 0 2% 0;
+  padding: 2%;
+}*/
+#div1_2,
+#div2_2,
+#div3_2,
+#div4_2{
+  padding: 4%;
+  height: 400px;
+  width: 90%;
+  overflow: scroll;
+}
+

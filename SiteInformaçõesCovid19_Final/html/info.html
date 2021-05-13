@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="..//css/info.css">
+        <script src="../libs/jquery/jquery-3.6.0.min.js"></script>
+        <script src="..//js/info.js"></script>
+        <title>Informações Covid</title>
+        <!-- pegar daqui p baixo, incluir esse link de font !!--> 
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+
+
+        <script src="./jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = " https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+        rel = "stylesheet">
+
+    </head>
+
+    <body onload="atualizarDataHora()">
+        <header>
+        
+            <div id="lupa" onclick="aumentar()" ondblclick="diminuir()"> <img src="..//imagens/lupa+papel.png" alt="lupa"> </div>
+    
+            <div id="datahora"> </div>
+    
+    
+            <div id="bandeiraDeSp">
+                <img id="bandeiraSp" src="..//imagens/Bandeira_do_estado_de_São_Paulo.svg" alt="Bandeira de São Paulo"> </div>
+                <p id="frase" style="font-size: 35px; line-height: 1.6; letter-spacing: 0.199em; font-weight: 300; font-style: italic;"> Governo de SP contra o coronavírus </p>
+
+            <div id="DivbotaoMenu"><img id= "botaoMenu" src="..//imagens/menu.png" alt=""> </div>
+            <div id="menu"> 
+                <a href="..//html/index.html"> Home</a>
+                <a href="..//html/info.html"> Informações</a>
+                <a href="..//html/quemSomos.html"> Quem somos</a>
+                <a href="..//html/formulario.html"> Vacine-se</a>
+            </div>
+
+        </header>
+
+        <main>
+
+            <div id="containerGeral">
+                <p style="font-weight:500; font-size: larger;">Descubra aqui por meio da Taxa de Ocupação de Leitos de UTI ou da Quantidade de Leitos da UTI em qual fase vcs estamos, bem como quais estabelecimentos estarão abertos: </p>
+            </div>
+
+            <div id="containerVerm">
+                <div class="verm">
+                    <p style="font-weight: 800; font-size: larger;">Fase 1 - Alerta Máximo</p>
+                </div>
+                <div  class="verm">
+                    <p><strong>Fechados:</strong> Espaços públicos, Atividades imobiliárias,Concessionárias, Escritórios, Bares, restaurantes e similares, Comércio, Shopping center, Salão de beleza, Academia, Teatro, cinemas, Promover eventos que geram aglomeração.
+                    </p>
+                </div>
+            </div>
+
+            <div id="containerLaran" >
+                <div class="laran">
+                    <p style="font-weight: 800; font-size: larger;">Fase 2 - Controle</p>
+                </div>
+                <div class="laran">
+                    <p>
+                        <strong>Fechados:</strong> Espaços públicos, , Bares, restaurantes e similares,  Salão de beleza, Academia, Teatro, cinemas, Promover eventos que geram aglomeração.
+                    </p>
+                </div>
+                <div class="laran">
+                    <p>
+                        <strong>Aberto com Restrições:</strong> Atividades imobiliárias,Concessionárias, Escritórios, Comércio, Shopping center,
+                    </p>
+                </div>
+            </div>
+
+            <div id="containerAmare">
+                <div class="amare">
+                    <p style="font-weight: 800; font-size: larger;">Fase 3 - Flexibilização</p>
+                </div>
+                <div class="amare">
+                    <p><strong>Fechados:</strong> Espaços públicos, Academia, Teatro, cinemas, Promover eventos que geram aglomeração.
+                    </p>
+                </div>
+                <div class="amare">
+                    <p> <strong>Aberto com Restrições:</strong> Bares, restaurantes e similares, Comércio, Shopping center, Salão de beleza,</p>
+                </div>
+                <div class="amare">
+                    <p> <strong>Aberto:</strong> Atividades imobiliárias,Concessionárias, Escritórios</p>
+                   
+                </div>
+            </div>
+
+            <div id="containerVerd" >
+                <div class="verd">
+                    <p style="font-weight: 800; font-size: larger;">Fase 4 - Abertura Parcial</p>
+                </div>
+                <div class="verd">
+                    <p><strong>Fechados:</strong> Espaços públicos, Teatro, cinemas, Promover eventos que geram aglomeração.
+                    </p>
+                </div>
+                <div class="verd">
+                    <p> <strong>Aberto com Restrições:</strong> Bares, restaurantes e similares, Comércio, Shopping center, Salão de beleza, Academia,</p>
+                </div>
+                <div class="verd">
+                    <p> <strong>Aberto:</strong> Atividades imobiliárias,Concessionárias, Escritórios</p>
+                   
+                </div>
+            </div>
+
+            <div id="containerInput">
+                <label class="texto">Taxa de Ocupação de UTI:</label>
+                <input id="ocupa-uti" class="inputEnt" placeholder="% de UTI ocupados" /><br /><br />
+        
+                <label class="texto">Leitos de UTI por habitantes:</label>
+                <input id="leitos-enferm" class="inputEnt" placeholder="Total de leitos ocupados" />
+                <div id="imgFases">
+                    <img src="..//imagens/quadro.jpeg" alt="" srcset="" style="width: 120%;">
+                </div>
+            </div>
+        </main>
+
+        <footer id="rodape">
+            <div id="avisoDePrivacidade"> 
+              <p> Aviso Legal de Privacidade</p>
+          </div>
+          
+          <div id="RedeSocial"> 
+            <a href="https://www.facebook.com/governosp/"><img src="..//imagens/facebook.png" alt="1facebook"></a>
+          
+            <a href="https://www.youtube.com/channel/UCc7rfCbP90qiw3BgT-Iqc7g"><img src="..//imagens/icones/youtube(1).png" alt="Youtube"></a>
+          
+            <a href="https://twitter.com/governosp/"><img src="..//imagens/icones/twitter.png" alt="Twitter"></a>
+          
+            <a href="https://www.instagram.com/governosp/"><img src="..//imagens/icones/instagram.png" alt="Instagram"></a>
+          
+            <a href="https://t.me/governosp"><img src="..//imagens/icones/telegram.png" alt="Telegram"></a>
+          </div>
+          
+          </div>
+          <div id="copyright">  &copy; 2021 Estado de SP
+          </div>
+          
+          </footer>
+
+    </body>
